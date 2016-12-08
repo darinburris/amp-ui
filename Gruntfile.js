@@ -116,6 +116,21 @@ module.exports = function(grunt) {
 			}
 		},
 		/**
+		 * @description grunt task lints scss files
+		 */
+		sasslint: {
+			options: {
+				configFile: '.sass-lint.yml',
+			},
+			target: [
+				'source/scss/\*.scss',
+				'!source/scss/_normalize.scss',
+				'!source/scss/_tooltips.scss',
+				'!source/scss/_sprites.scss',
+				'!source/scss/_colorbox.scss'
+			]
+		},
+		/**
 		 * @description grunt task minimizes css files
 		 */
 		cssmin: {
@@ -310,7 +325,7 @@ module.exports = function(grunt) {
 				files: [
 					ampConfig.base.sourceDir + '/scss/**/*.scss'
 				],
-				tasks: ['sass:watching'],
+				tasks: ['sass:watching','sasslint'],
 				options: {
 					spawn: false
 				}
@@ -354,7 +369,7 @@ module.exports = function(grunt) {
 		function() {
 			grunt.config.set('taskName', this.name);
 			grunt.task.run(
-				['clean:preRelease', 'copy:buildHTML', 'copy:buildIMG', 'includes', 'replace:localize', 'genTOC','sprite', 'sass:dist','copy:buildJS','clean:postRelease','mochaTest']//'rjsReplace', , 'jscs'
+				['clean:preRelease', 'copy:buildHTML', 'copy:buildIMG', 'includes', 'replace:localize', 'genTOC','sprite','sasslint','sass:dist','copy:buildJS','clean:postRelease','mochaTest']//'rjsReplace', , 'jscs'
 			);
 		}
 	);
@@ -452,7 +467,7 @@ module.exports = function(grunt) {
 				paths.push(path);
 			}
 		});
-		var tocULStart = '<ul id="tocList" role="list">',
+		var tocULStart = '<ul id="tocList" class="toc-list" role="list">',
 			tocLI = '',
 			tocULEnd = '</ul>';
 		//gruntgenerate TOC from html files

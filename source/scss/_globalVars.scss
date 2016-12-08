@@ -1,29 +1,36 @@
 //Fonts
-$font-stack: 'Helvetica Neue','Open Sans', sans-serif;
+$font-stack: 'Helvetica Neue', 'Open Sans', sans-serif;
 
 //Colors
-$purple-pink: 	#BE5F75;
-$red1: 			#A52D2D;
-$red2: 			#BD411B;
-$red3:			#a52f2f;
-$red4:			#a42e30;
-$orange: 		#EF8E2F;
-$yellow1: 		#F5B82A;
-$yellow2: 		#A4A4A4;
-$yellow3: 		#FFFFCD;
-$brown: 		#804D38;
-$tan: 			#D5CFBF;
-$tan-light: 	#F2F1EC;
-$tan-lighter: 	#F7F7F4;
-$brand-blue: 	#0070AF;
-$light-blue: 	#7297A9;
-$lighter-blue: 	#DDE7E9;
-$green: 		#B2A847;
-$black: 		#444;
-$grey1: 		#888;
-$grey2: 		#CCC;
-$gray3: 		#AAA;
-$white: 		#FFF;
+$purple-pink:       #be5f75;
+$red1:              #a52d2d;
+$red2:              #bd411b;
+$red3:              #a52f2f;
+$red4:              #a42e30;
+$orange:            #ef8e2f;
+$yellow1: 		    #f5b82a;
+$yellow2:           #a4a4a4;
+$yellow3:           #ffffcd;
+$brown:             #804d38;
+$tan:               #d5cfbf;
+$tan-light:         #f2f1ec;
+$tan-lighter:       #f7f7f4;
+$brand-blue:        #0070af;
+$light-blue:        #7297a9;
+$lighter-blue:      #dde7e9;
+$green:             #b2a847;
+$black:             #444;
+$grey1:             #888;
+$grey2:             #ccc;
+$gray3:             #aaa;
+$gray4:             #eee;
+$gray5:             #111;
+$gray6:             #222;
+$white:             #fff;
+$lightTurquoise:    #8fdce5;
+$mediumTurquoise:   #3dc3d1;
+$darkTurquoise:     #2aa4b2;
+$darkBoxShadowRGBA:     rgba(255, 255, 255, .45);
 
 //Color Applications
 $color-FinancingInFooter: 			$purple-pink;
@@ -57,7 +64,7 @@ $color-SuccessfulAddCheckmark:		$green;
 $color-IconsLighterText:			$grey1;
 $color-StrokesRules:				$grey1;
 $color-Cart5YearFabricProtection:	$lighter-blue;
-$color-BgCheckoutBtn: 				#FFC559;
+$color-BgCheckoutBtn: 				#ffc559;
 
 $primary-nav-height: 36px;
 $primary-nav-width: 1000px;

@@ -1,14 +1,12 @@
-/**
-* Base styles
-* Think of these as any style whose treatment is consistant accross the site, or are used globally on every page, such as priomary or utility navigation styles
-* For example: copy text would alkways have a base color of #000, or any <a> would have a base color of #0070AF
-*/
+// Base styles
+// Think of these as any style whose treatment is consistant accross the site, or are used globally on every page, such as priomary or utility navigation styles
+// For example: copy text would alkways have a base color of #000, or any <a> would have a base color of #0070AF
 
-#tocList{
+.toc-list {
 
-	li{
+	li {
 
-		&:last-child{
+		&:last-child {
 			margin-bottom: rem(20);
 		}
 
@@ -23,171 +21,257 @@ body {
 	font-weight: 300;
 }
 
-a{
+a {
 	color: $color-TextLinks;
 	text-decoration: none;
+
+	:hover {
+		text-decoration: underline;
+	}
+
 }
 
-a:hover{
-	text-decoration: underline;
-}
+main {
 
-main a{
-	font-size: 12px;
-}
+	a {
+		font-size: 12px;
+	}
 
-p{
-	line-height: 1.4;
-	font-size: 1rem;
-}
-
-h1,h2,h3,h4,h5,h6{
-	margin-top: 0;
-}
-
-h1{
-	font-size: 27px;
-}
-
-h2{
-	font-size: 24px;
-}
-
-img + h2{
-	margin-top: 20px;
-}
-
-h2{
-	font-size: 20px;
-}
-
-h3{
-	font-size: 18px;
-}
-
-h4{
-	font-size: 16px;
-}
-
-h5{
-	font-size: 14px;
-}
-
-h6{
-	font-size: 12px;
-}
-
-main{
-
-	h1{
+	h1 {
 		margin-top: 0;
 	}
 
 }
 
-ul{
+p {
+	font-size: 1rem;
+	line-height: 1.4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+}
+
+h1 {
+	font-size: 27px;
+}
+
+h2 {
+	font-size: 24px;
+}
+
+// sass-lint:disable no-mergeable-selectors
+img + h2 {
+	margin-top: 20px;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	font-size: 12px;
+}
+
+ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 
-	li{
+	li {
 		vertical-align: top;
 	}
 
 }
 
-figure{
+figure {
 	margin: 0;
 }
 
-.clear{
+.clear {
 	@include clearfix();
 }
 
 .util-nav-items,
-.util-nav .sign-in{
-	display: inline-block;
-	margin: 0;
+.util-nav {
+	.sign-in {
+		display: inline-block;
+		margin: 0;
+	}
 }
 
-.util-nav div,
-.cart-links{
-	text-align: right;
-	white-space: nowrap;
-}
+.util-nav {
 
-.primary-nav-items{
-	display: table;
-}
+	div {
 
-.primary-nav-items{
-	width: 100%;
-}
-
-.util-nav-items li,
-.sign-in,
-.mini-cart{
-	line-height: rem(30);
-	margin-right: rem(10);
-	white-space: nowrap;
-}
-
-.util-nav-items li:after{
-	content: "|";
-	color: $util-nav-items-seperator-color;
-	margin-left:10px;
-}
-
-.util-nav-items li,
-.breadcrumb-nav-items li{
-	display: inline-block;
-	white-space: nowrap;
-}
-
-.breadcrumb-nav-items li:after{
-	content: "\203A";
-	font-size: 18px;
-	line-height: 0;
-	margin: 0 10px;
-}
-
-.breadcrumb-nav-items li,
-.breadcrumb-nav-items li a{
-	color: #000;
-	font-size: 12px;
-	font-weight: 800;
-}
-
-.breadcrumb-nav-items li{
-	font-weight: 400;
-}
-
-.util-nav-items li:last-child:after,
-.breadcrumb-nav-items li:last-child:after{
-	content: "";
-	margin: 0;
-}
-
-.primary-nav-items li{
-	line-height: 36px;
-	text-align: center;
-	text-transform: capitalize;
-	white-space: nowrap;
-
-	a{
-
-		font-size: .8rem;
+		text-align: right;
+		white-space: nowrap;
 
 	}
 
 }
 
-/**
-*
-* Button styles
-*
-*/
-.btn{
+.cart-links {
+	text-align: right;
+	white-space: nowrap;
+}
+
+.primary-nav-items {
+	display: table;
+}
+
+.primary-nav-items {
+	width: 100%;
+}
+
+.util-nav-items {
+	li {
+
+		line-height: rem(30);
+		margin-right: rem(10);
+		white-space: nowrap;
+
+	}
+
+}
+
+.sign-in,
+.mini-cart {
+	line-height: rem(30);
+	margin-right: rem(10);
+	white-space: nowrap;
+}
+
+.util-nav-items {
+
+	li {
+
+		&:after {
+
+			color: $util-nav-items-seperator-color;
+			content: '|';
+			margin-left: 10px;
+
+		}
+
+	}
+
+}
+
+.util-nav-items,
+.breadcrumb-nav-items {
+
+	li {
+
+		display: inline-block;
+		white-space: nowrap;
+
+	}
+
+}
+
+.breadcrumb-nav-items {
+
+	li {
+
+		&:after {
+
+			content: '\203A';
+			font-size: 18px;
+			line-height: 0;
+			margin: 0 10px;
+
+		}
+
+	}
+
+}
+
+.breadcrumb-nav-items,
+.breadcrumb-nav-items {
+
+	li {
+
+		color: $black;
+		font-size: 12px;
+		font-weight: 400;
+
+	}
+
+}
+
+.breadcrumb-nav-items {
+	li {
+		a {
+
+			color: $black;
+			font-size: 12px;
+			font-weight: 800;
+		}
+
+	}
+
+}
+
+.util-nav-items,
+.breadcrumb-nav-items {
+
+	li {
+
+		&:last-child {
+
+			&:after {
+
+				content: '';
+				margin: 0;
+
+			}
+
+		}
+
+	}
+
+}
+
+.primary-nav-items {
+
+	li {
+
+		line-height: 36px;
+		text-align: center;
+		text-transform: capitalize;
+		white-space: nowrap;
+
+		a {
+
+			font-size: .8rem;
+
+		}
+
+	}
+
+}
+
+// Button styles
+%btn {
+	@include border-radius(5px);
 	border: 2px solid inherit;
 	color: $black;
 	font-size: 12px;
@@ -198,118 +282,135 @@ figure{
 	text-align: center;
 	text-decoration: none;
 	text-transform: capitalize;
-	@include border-radius(5px);
 }
 
-.btn-primary{
-	@extend .btn;
+
+.btn {
+	@extend %btn;
+}
+
+.btn-primary {
+	@extend %btn;
 	background-color: $color-BgCheckoutBtn;
 	border: 2px solid $color-BgCheckoutBtn;
 	display: inline-block;
+
+	&:hover {
+		background-color: $white;
+		border: 2px solid $color-BgCheckoutBtn;
+		color: $color-BgCheckoutBtn;
+		line-height: 22px;
+		text-decoration: none;
+	}
+
 }
 
-.btn-primary:hover{
-	background-color: white;
-	border: 2px solid $color-BgCheckoutBtn;
-	color: $color-BgCheckoutBtn;
-	line-height: 22px;
-	text-decoration: none;
-}
 
-.btn-secondary{
-	@extend .btn;
+
+.btn-secondary {
+	@extend %btn;
 	background-color: $color-Buttons1;
 	border: 2px solid $color-Buttons1;
-	color: white;
+	color: $white;
 	display: inline-block;
+
+	&:hover {
+		background-color: $white;
+		border: 2px solid $color-Buttons1;
+		color: $color-Buttons1;
+		text-decoration: none;
+	}
+
 }
 
-.btn-secondary:hover{
-	background-color: white;
-	border: 2px solid $color-Buttons1;
-	color: $color-Buttons1;
-	text-decoration: none;
-}
-
-.btn-email{
-	@extend .btn;
+.btn-email {
+	@extend %btn;
 	background-color: $color-BgCheckoutBtn;
 	border: 2px solid $color-BgCheckoutBtn;
 	display: inline-block;
 	font-size: 13px;
-	line-height: 1;
 	height: auto;
+	line-height: 1;
 	margin-left: 8px;
-	padding-top: 6px;
 	padding-bottom: 6px;
-}
+	padding-top: 6px;
 
-.btn-email:hover{
-	background-color: white;
-	border: 2px solid $color-BgCheckoutBtn;
-	color: $color-BgCheckoutBtn;
-	text-decoration: none;
+	&:hover {
+		background-color: $white;
+		border: 2px solid $color-BgCheckoutBtn;
+		color: $color-BgCheckoutBtn;
+		text-decoration: none;
+	}
+
 }
 
 .btn-search {
 	background: transparent url($icon-search-image) $icon-search-offset-x $icon-search-offset-y  no-repeat;
-	border: none;
+	border: 0;
 	height:  $icon-search-height;
 	padding: 0; //a reset for Foundation styles
 	position: absolute;
 	right: rem(15);
 	text-indent: -9999px;
 	top: rem(10);
-	width:  rem(17);
-}
+	width: rem(17);
 
-.btn-search:hover{
-	background: transparent url($icon-search-image) $icon-search-offset-x $icon-search-offset-y  no-repeat;
+	&:hover {
+		background: transparent url($icon-search-image) $icon-search-offset-x $icon-search-offset-y  no-repeat;
+	}
+
 }
 
 @include hidpi(1.5) {
-  width: 20em;
+	width: 20em;
 }
 
-div.box {
-    border-radius: 40px;
-    border: 1px solid #2aa4b2;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
-    height: 40px;
-    background-color: #8fdce5;
-    background-image: -webkit-linear-gradient(#8fdce5, #3dc3d1);
-    background-image: linear-gradient(#8fdce5, #3dc3d1);
-    width: 40px;
+div {
+
+	&.box {
+
+		background-color: $lightTurquoise;
+		background-image: linear-gradient($lightTurquoise, $mediumTurquoise);
+		border: 1px solid $darkTurquoise;
+		border-radius: 40px;
+		box-shadow: inset 0 1px 0 $darkBoxShadowRGBA;
+		height: 40px;
+		width: 40px;
+
+		&:hover {
+			// Animation shorthand works the same as the CSS3 animation shorthand
+			@include animation(scale 1s ease-in, slide 2s ease);
+
+			// The above outputs the same CSS as using independent, granular mixins.
+			@include animation-name(scale, slide);
+			@include animation-duration(2s);
+			@include animation-timing-function(ease);
+			@include animation-iteration-count(infinite);
+		}
+
+	}
+
 }
 
-.box:hover {
-	// Animation shorthand works the same as the CSS3 animation shorthand
-	@include animation(scale 1.0s ease-in, slide 2.0s ease);
+.logo {
 
-	// The above outputs the same CSS as using independent, granular mixins.
-	@include animation-name(scale, slide);
-	@include animation-duration(2s);
-	@include animation-timing-function(ease);
-	@include animation-iteration-count(infinite);
-}
-
-.logo{
 	font-size: rem(64);
 	font-weight: 100;
 	margin: 0;
 
-	a{
-		text-shadow: 0 rem(2) rem(2) $grey2;
+	a {
+
 		color: $black;
 		text-decoration: none;
+		text-shadow: 0 rem(2) rem(2) $grey2;
 
-		&:hover{
+		&:hover {
 			color: $brand-blue;
 		}
 
 	}
 
-	img{
+	img {
 		width: rem(220);
 	}
 

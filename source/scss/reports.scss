@@ -1,38 +1,40 @@
-@import "bourbon",
-		"neat",
-		"grid-settings",
-		"config",
-		"utils",
-		"base",
-		"layout",
-		"forms";
+@import 'bourbon',
+'neat',
+'grid-settings',
+'config',
+'utils',
+'base',
+'layout',
+'forms';
 
-body{
-
-}
-
-main{
-	padding: 0;
+main {
 
 	@include media($large-phone-down) {
 		margin-left: rem(20);
 		margin-right: rem(20);
 	}
 
-	& p:last-child,
-	& hr{
+	padding: 0;
+
+	p {
+		&:last-child {
+			display: none;
+		}
+	}
+
+	hr {
 		display: none;
 	}
 
 }
 
-.masthead-banner{
+.masthead-banner {
 	background-color: $brand-blue;
 
-	.logo{
+	.logo {
 		margin-left: rem(20);
 
-		a{
+		a {
 			color: $white;
 			text-shadow: 0 rem(2) rem(2) $black;
 		}
@@ -41,18 +43,18 @@ main{
 
 }
 
-section{
+section {
 	margin-bottom: rem(20);
 
 	.key,
-	.file{
+	.file {
 		background-color: $light-blue;
 		color: $white;
 		display: block;
 		padding: rem(6) rem(10);
 	}
 
-	h2{
+	h2 {
 		background-color: $red4;
 		color: $white;
 		margin-bottom: 0;
@@ -62,42 +64,42 @@ section{
 
 	.element,
 	.extract,
-	p{
-		background-color: #eee;
-		display: block;
+	p {
+		background-color: $gray4;
 		border-left: rem(1) solid $grey2;
 		border-right: rem(1) solid $grey2;
 		border-top: rem(1) solid $grey2;
+		display: block;
 		margin: 0;
 		padding: rem(20) rem(10);
 	}
 
-	p{
+	p {
 		border-bottom: rem(1) solid $grey2;
-		border-top: none;
+		border-top: 0;
 		font-style: italic;
-		padding: 0 rem(10) rem(10) rem(10);
+		padding: 0 rem(10) rem(10);
 	}
 
 }
 
-.parker-report{
+.parker-report {
 
-	h3{
-		border-bottom: 1px solid #ccc;
-		margin: 0 0 rem(20) 0;
+	h3 {
+		border-bottom: 1px solid $grey2;
+		margin: 0 0 rem(20);
 		padding-bottom: 10px;
 	}
 
-	ul{
+	ul {
 		line-height: 2;
 		margin-bottom: rem(20);
 
-		li{
+		li {
 			font-style: italic;
 			margin-left: rem(10);
 
-			strong{
+			strong {
 
 				font-style: normal;
 

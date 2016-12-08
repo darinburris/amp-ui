@@ -1,23 +1,20 @@
-/*
- * Layout specific styles
- *
- *
- *
-*/
+// Layout specific styles
 
-@import "bourbon",
-		"neat",
-		"grid-settings",
-		"config",
-		"utils";
+@import
+'bourbon',
+'neat',
+'grid-settings',
+'config',
+'utils';
 
-main{
-	margin: rem(20) 0;
-	padding: 0;
+main {
 
 	@include media($large-phone-down) {
 		margin-bottom: rem(40);
 	}
+
+	margin: rem(20) 0;
+	padding: 0;
 
 }
 
@@ -26,92 +23,93 @@ main,
 .masthead-banner,
 .primary-nav,
 .breadcrumb-nav,
-footer{
+footer {
 	@include outer-container;
 }
 
-.primary-nav{
-	padding: 0;
+.primary-nav {
 	min-height: rem(38);
-
+	padding: 0;
 }
 
-.primary-nav-items{
+.primary-nav-items {
+
+	@include media($large-phone-down) {
+		display: block;
+		max-height: rem(36);
+		overflow: hidden;
+		transition: max-height .15s ease-out;
+
+		&.open {
+			max-height: 500px;
+			transition: max-height .25s ease-in;
+		}
+
+		li {
+
+			display: block;
+			margin-left: rem(20);
+			text-align: left;
+
+			&:first-child {
+				background-color: inherit;
+				margin-left: rem(20);
+			}
+
+			&:hover {
+				background-color: inherit;
+			}
+
+			a {
+				color: $white;
+			}
+
+		}
+
+	}
+
 	background-color: $brand-blue;
 	display: flex;
 	flex-direction: row;
 	flex-flow: row wrap;
 	padding: 0;
 
-	@include media($large-phone-down) {
-		display: block;
-		max-height: rem(36);
-		overflow: hidden;
-		transition: max-height 0.15s ease-out;
-
-		&.open{
-			max-height: 500px;
-			transition: max-height 0.25s ease-in;
-		}
-
-		li{
-
-			display: block;
-			margin-left: rem(20);
-			text-align: left;
-
-			&:first-child{
-				background-color: inherit;
-				margin-left: rem(20);
-			}
-
-			&:hover{
-				background-color: inherit;
-			}
-
-			a{
-				color: white;
-			}
-
-		}
-
-	}
-
-	li{
+	li {
 		flex-grow: 1;
 
-		a{
+		a {
 			color: $white;
 			display: block;
 			text-shadow: 0 rem(1) rem(2) $black;
 
-			&:hover{
+			&:hover {
 				text-decoration: none;
 				text-shadow: none;
 			}
 
 		}
 
-		&:hover{
-			background-color: #ccc;
+		&:hover {
 
-			a{
+			background-color: $grey2;
+
+			a {
 				color: $brand-blue;
 			}
 
 		}
 
-		&.menu-link{
+		&.menu-link {
 			background-color: inherit;
-			color: white;
-
+			color: $white;
 		}
 
 	}
 
 }
 
-.util-nav{
+.util-nav {
+
 	@include media($large-phone-down) {
 
 		display: none;
@@ -120,25 +118,30 @@ footer{
 
 }
 
-.util-nav-items{
+.util-nav-items {
+
+	@include media($medium-screen-before-break-size) {
+
+		@include span-columns(7);
+
+	}
+
+	@include media($large-phone-down) {
+
+		display: none;
+
+	}
+
 	padding: 0;
 
-	@include media($medium-screen-before-break-size) {
-		@include span-columns(7);
-	}
-
-	@include media($large-phone-down) {
-
-		display: none;
-
-	}
-
 }
 
-.sign-in{
+.sign-in {
 
 	@include media($medium-screen-before-break-size) {
+
 		@include span-columns(2);
+
 	}
 
 	@include media($large-phone-down) {
@@ -151,11 +154,12 @@ footer{
 
 @include direction-context(right-to-left) {
 
-	.mini-cart{
-		margin: 0;
+	.mini-cart {
 
 		@include media($medium-screen-before-break-size) {
+
 			@include span-columns(3);
+
 		}
 
 		@include media($large-phone-down) {
@@ -164,15 +168,18 @@ footer{
 
 		}
 
+		margin: 0;
+
 	}
 
 }
 
-.masthead-banner{
+.masthead-banner {
+
 	padding-bottom: rem(10);
 
-	.logo{
-		margin-bottom: 0;
+	.logo {
+
 		@include media($medium-screen-before-break-size) {
 			@include span-columns(8);
 		}
@@ -182,9 +189,11 @@ footer{
 			margin: rem(10) 0 rem(10) rem(10);
 		}
 
+		margin-bottom: 0;
+
 	}
 
-	form{
+	form {
 
 		@include media($medium-screen-before-break-size) {
 			@include span-columns(4);
@@ -197,13 +206,13 @@ footer{
 
 }
 
-.secondary-nav{
+.secondary-nav {
 
 	@include media($medium-screen-before-break-size) {
 		@include span-columns(3);
 	}
 
-	+ [role="region"]{
+	+ [role='region'] {
 
 		@include media($medium-screen-before-break-size) {
 			@include span-columns(9);
@@ -219,16 +228,16 @@ footer{
 
 }
 
-.breadcrumb-nav-items{
+.breadcrumb-nav-items {
 	background-color: $grey2;
+	line-height: 2;
 	margin-top: rem(10);
 	padding: rem(4) rem(20);
-	line-height: 2;
 }
 
-.two-column-equal{
+.two-column-equal {
 
-	[role="region"]{
+	[role='region'] {
 		@include media($medium-screen-before-break-size) {
 			@include span-columns(6);
 		}
@@ -236,28 +245,25 @@ footer{
 
 }
 
-.three-column{
+.three-column {
 
-	.secondary-nav{
+	.secondary-nav {
 
-		ul{
+		ul {
 			list-style-type: none;
-
-			li{}
-
 		}
 
 		@include media($medium-screen-before-break-size) {
 			@include span-columns(3);
 		}
 
-		+ [role="region"]{
+		+ [role='region'] {
 
 			@include media($medium-screen-before-break-size) {
 				@include span-columns(6);
 			}
 
-			+ [role="complementary"]{
+			+ [role='complementary'] {
 
 				@include media($medium-screen-before-break-size) {
 					@include span-columns(3);
@@ -271,22 +277,23 @@ footer{
 
 }
 
-.two-column-last{
+.two-column-last {
 
-	[role="main"]{
+	[role='main'] {
 
-		> [role="region"]{
+		> [role='region'] {
 
 			@include media($medium-screen-before-break-size) {
 				@include span-columns(9);
 			}
 
-			+ [role="complementary"]{
-				margin-top: rem(20);
+			+ [role='complementary'] {
 
 				@include media($medium-screen-before-break-size) {
 					@include span-columns(3);
 				}
+
+				margin-top: rem(20);
 
 			}
 
@@ -296,15 +303,15 @@ footer{
 
 }
 
-.two-column-first{
+.two-column-first {
 
-	.secondary-nav{
+	.secondary-nav {
 
 		@include media($medium-screen-before-break-size) {
 			@include span-columns(3);
 		}
 
-		+ [role="region"]{
+		+ [role='region'] {
 
 			@include media($medium-screen-before-break-size) {
 				@include span-columns(9);
@@ -322,21 +329,21 @@ footer{
 
 }
 
-.two-column-first-four-content{
+.two-column-first-four-content {
 
-	.secondary-nav{
+	.secondary-nav {
 
 		@include media($medium-screen-before-break-size) {
 			@include span-columns(3);
 		}
 
-		+ [role="region"]{
+		+ [role='region'] {
 
 			@include media($medium-screen-before-break-size) {
 				@include span-columns(9);
 			}
 
-			> div{
+			> div {
 
 				@include media($medium-screen-before-break-size) {
 					@include span-columns(3);
@@ -344,35 +351,27 @@ footer{
 
 			}
 
-/* 			> div:first-child{
-
-				@include media($medium-screen-before-break-size) {
-					@include span-columns(6);
-				}
-
-			}			 */
-
 		}
 
 	}
 
 }
 
-.two-column-first-three-content{
+.two-column-first-three-content {
 
-	.secondary-nav{
+	.secondary-nav {
 
 		@include media($medium-screen-before-break-size) {
 			@include span-columns(3);
 		}
 
-		+ [role="region"]{
+		+ [role='region'] {
 
 			@include media($medium-screen-before-break-size) {
 				@include span-columns(9);
 			}
 
-			> div{
+			> div {
 
 				@include media($medium-screen-before-break-size) {
 					@include span-columns(4);
@@ -386,25 +385,32 @@ footer{
 
 }
 
-footer[role="contentinfo"]{
-	border-top: rem(1) solid $grey2;
-	margin-top: rem(20);
-	padding: rem(10) 0;
+footer {
 
-	@include media($large-phone-down) {
-		background-color: $white;
-		position: fixed;
-		bottom: 0;
-		padding-left: rem(10);
-		width: 100%;
+	[role='contentinfo'] {
+
+		@include media($large-phone-down) {
+			background-color: $white;
+			bottom: 0;
+			padding-left: rem(10);
+			position: fixed;
+			width: 100%;
+		}
+
+		border-top: rem(1) solid $grey2;
+		margin-top: rem(20);
+		padding: rem(10) 0;
+
 	}
 
 }
 
+.menu-link {
 
-.menu-link{
-	display: none;
 	@include media($large-phone-down) {
 		display: list-item;
 	}
+
+	display: none;
+
 }

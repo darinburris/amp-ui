@@ -1,58 +1,53 @@
-/**
-* form styles
-*/
+// form styles
 form,
 fieldset,
-legend{
+legend {
+	border: 0;
 	margin: 0;
 	padding: 0;
-	border: none;
 
-	fieldset{
-	border: none;
-
+	fieldset {
+		border: 0;
 	}
 
 }
 
-legend{
+legend {
 	display: none;
 }
 
-label{
+label {
 	font-size: 12px;
-}
 
-label[for="globaleSearch"]{
-	display: none;
+	[for='globaleSearch'] {
+		display: none;
+	}
+
 }
 
 input,
 textarea,
-select{
+select {
 	border: 1px solid $color-StrokesRules;
 	font-size: 12px;
 	margin: 0;
 }
 
-[type="text"],
-[type="password"],
-[type="email"],
-[type="number"],
-[type="tel"],
-[type="url"],
-[type="search"],
-select{
+[type='text'],
+[type='password'],
+[type='email'],
+[type='number'],
+[type='tel'],
+[type='url'],
+[type='search'],
+select {
 	height: 30px;
 	padding: 0 5px 0 10px;
 }
 
-.masthead-banner{
+.masthead-banner {
 
-	form{
-
-		margin-top: rem(40);
-		position: relative;
+	form {
 
 		@include media($large-phone-down) {
 
@@ -60,7 +55,10 @@ select{
 
 		}
 
-		input{
+		margin-top: rem(40);
+		position: relative;
+
+		input {
 			width: 100%;
 		}
 
@@ -72,15 +70,15 @@ select{
 	@include fill-parent;
 }
 
-.globale-search-form{
+.globale-search-form {
 
-	> fieldset{
+	> fieldset {
 
-		&:first-child{
+		&:first-child {
 
 			position: relative;
 
-			.btn-search{
+			.btn-search {
 
 				width: rem(17);
 

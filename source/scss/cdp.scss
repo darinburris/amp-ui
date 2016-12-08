@@ -1,13 +1,11 @@
-@import "bourbon",
-		"neat",
-		"grid-settings",
-		"config",
-		"utils";
+@import
+'bourbon',
+'neat',
+'grid-settings',
+'config',
+'utils';
 
-
-.hero-image{
-
-	width: 100%;
+.hero-image {
 
 	@include media($small-phone-down) {
 
@@ -15,9 +13,11 @@
 
 	}
 
+	width: 100%;
+
 }
 
-.product-list{
+.product-list {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -25,10 +25,7 @@
 	margin: 0 -10px;
 	padding: 0;
 
-	li{
-		margin: 0;
-		padding: 10px;
-		width: 25%;
+	li {
 
 		@include media($large-phone-down) {
 
@@ -42,51 +39,55 @@
 
 		}
 
+		margin: 0;
+		padding: 10px;
+		width: 25%;
+
 	}
 
 }
 
-figure{
+figure {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 
-	a{
+	a {
 		text-decoration: none;
 
-		&:hover{
-			text-decoration: none !important;
+		&:hover {
+			text-decoration: none;
 		}
 	}
 
-	img{
+	img {
 		width: 100%;
 	}
 
-	figcaption{
+	figcaption {
 
-		p{
+		p {
 			margin: 0;
 			padding: 0;
 
-			&.product-name{
+			&.product-name {
 				font-weight: 800;
 			}
 
 		}
 
 		data,
-		p{
+		p {
 			display: block;
 			font-size: 1rem;
 			line-height: 1.4;
 		}
 
-		[itemprop="price"]{
+		[itemprop='price'] {
 			font-weight: 800;
 		}
 
-		.colors{
+		.colors {
 			font-size: .8rem;
 		}
 

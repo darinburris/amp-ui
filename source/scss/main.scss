@@ -1,13 +1,13 @@
 $visual-grid: false !default;
 $visual-grid-color: #000 !default;
-$visual-grid-opacity: 0.04 !default;
+$visual-grid-opacity: .04 !default;
 
-@import "bourbon",
-		"neat",
-		"grid-settings",
-		"config",
-		"utils",
-		"base",
-		"layout",
-		"forms",
-		"accordian";
+@import 'bourbon',
+'neat',
+'grid-settings',
+'config',
+'utils',
+'base',
+'layout',
+'forms',
+'accordian';
