@@ -7,17 +7,7 @@
     {
       "name": "Darin Burris",
       "nickname": "BigDinBigD",
-      "email": "darin.burris@goamplifi.com"
-    },
-    {
-      "name": "Andrew Gil",
-      "nickname": "JerkyB",
-      "email": "andrew.gil@goamplifi.com"
-    },
-    {
-      "name": "Nick Boyd",
-      "nickname": "GOAT",
-      "email": "nick.boyd@goamplifi.com"
+      "email": "darin@darinburris.com"
     }
   ],
   "engines": {
@@ -99,7 +89,7 @@
     "start": "grunt && webpack && webpack-dev-server",
     "test": "mocha './spec/**/*.spec.js' --compilers js:babel-core/register"
   },
-  "author": "Amplifi Presentation Layer Practice",
+  "author": "Darin Burris",
   "licenses": [
     {
       "type": "MIT",
