@@ -56,7 +56,7 @@ them against predefined Grunt tasks resulting in release folder content.
 
 >HTML W3C validation
 
->**jsdoc**
+>**esdoc**
 
 >Generates source documentation using jsdoc
 
@@ -76,11 +76,6 @@ them against predefined Grunt tasks resulting in release folder content.
 
 >Spritesheet making utility
 
->**prod**
-
->Alias for "clean:preRelease", "copy:buildHTML", "includes",   
-"genTOC", "concurrent:W3C", "sprite", "sass:dist", "cssmin", "replace:amp", "rjsReplace", "copy:buildJS", "jshint", "uglify", "clean:postRelease", "psi-ngrok" tasks
-
 >**tempGen**
 
 >Parent task for generating tempalate files based on a pre-defined list of available template types
@@ -92,16 +87,6 @@ them against predefined Grunt tasks resulting in release folder content.
 >**genTOC**
 
 >Task that generates a table of contents from the current file list, then injects this list into the index.html file
-
->**Reports**
-
->Running and Generating W3C/WCAG Reports
-
->**failHard**
-
->Fails build if validation and accessability errors were found.
-
->This allows for the tasks to complete, and reports to be generated, while haulting the build from completion if errors are present.
 
 >**includes**
 
@@ -159,7 +144,7 @@ The following link provides some good instructions on how to choose the right di
 
     http://guides.beanstalkapp.com/version-control/git-on-windows.html
 
-#### NodeJs (v6.0.1)
+#### NodeJs (v6.0.0)
 
     https://nodejs.org/dist/v4.1.1/node-v4.1.1.pkg
 
@@ -189,13 +174,13 @@ Run grunt after getting latest code and whenever you want to recompile the relea
 
     grunt
 
-or
+After running Grunt, run webpack-dev-server, this bundles all dependencies and starts the dev server on port 3333
 
-    grunt prod
+    webpack-dev-server
 
-The difference between grunt and grunt prod is the addition of the CSS/JS minification/Concatination tasks.
+Once the dev server is running, start the mock API server. This specific server handles store requests by serving up mock store data to be used by Redux.
 
-For developement purposes simply run grunt.
+    json-server --watch store.json --port 3009
 
 ### Important Architectural Features
 
