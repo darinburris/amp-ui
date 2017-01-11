@@ -22,32 +22,35 @@ module.exports = {
 		}
 	},
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /.jsx?$/,
 				loader: 'babel-loader',
 				exclude: /node_modules/,
-				query: {
+				options: {
 					presets: ['es2015','react','stage-2'],
 					plugins: ['transform-decorators-legacy']
 				}
 			},
 			{
 				test: /\.js$/,
+				loader: 'babel-loader',
 				exclude: /node_modules/,
-				loader: 'babel',
-				query: {
+				options: {
 					presets: ['es2015','react','stage-2'],
 					plugins: ['transform-decorators-legacy']
 				}
-			}		]
+			}
+		]
 	},
 	resolve: {
-		root: [
-			path.resolve(__dirname, 'node_modules')
-		],
-		modulesDirectories: ['node_modules','source/js/modules/','source/js/components/'],
-		extensions: ['', '.js', '.jsx']
+		modules: [
+			path.join(__dirname, 'node_modules'),
+			'node_modules',
+			'source/js/modules/',
+			'source/js/components/'
+		]
+		//extensions: ['.js', '.jsx']
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin()
